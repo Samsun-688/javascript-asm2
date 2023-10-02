@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý điểm học sinh</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <h1>Quản lý điểm học sinh</h1>
+    <div>
+        <div>
+            <label for="name">Tên học sinh:</label>
+            <input type="text" id="name" value="a"> <br>
+        </div>
+        <div>
+            <label for="dob">Ngày sinh:</label>
+            <input type="date" id="dob" value="01-02-   2022"> <br>
+        </div>
+        <div>
+            <label for="math">Điểm Toán:</label>
+            <input type="number" id="math" value="5"> <br>
+        </div>
+        <div>
+            <label for="physics">Điểm Lý:</label>
+            <input type="number" id="physics" value="6"> <br>
+        </div>
+        <div>
+            <label for="chemistry">Điểm Hóa:</label>
+            <input type="number" id="chemistry" value="7">
+        </div>
+       
+    </div>
+    <button onclick="addStudent()">Thêm học sinh</button>
+    <button onclick="calculateAverage()">Tính điểm trung bình</button>
+    <button onclick="determineExcellence()">Xác định học lực</button>
+    <table>
+        <thead>
+            <tr>
+                <th>Tên</th>
+                <th>Ngày sinh</th>
+                <th>Điểm Toán</th>
+                <th>Điểm Lý</th>
+                <th>Điểm Hóa</th>
+                <th>Điểm Trung bình</th>
+                <th>Học lực</th>
+            </tr>
+        </thead>
+        <tbody id="studentTable">
+        </tbody>
+    </table>
+  
+<script src="index.js"></script>
+</body>
+</html>
