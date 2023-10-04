@@ -23,6 +23,7 @@ function addStudent() {
     };
     studenList.push(newStudent);
     displayTable(false);
+    
 }
 
 function calculateAverage() {
@@ -39,9 +40,11 @@ function calculateAverage() {
     
 }
 
-function determineExcellence() {
+function determineRank() {
     let rank;
+   
     for (let i = 0; i < studenList.length; i++) {
+       
         const student = studenList[i];
         console.log(student);
         if (student.avg >= 8.0) {
@@ -57,13 +60,30 @@ function determineExcellence() {
         }
         student.rank = rank;
         displayTable(false,true);
+        determineExcellence();
+      
     }
 
 }
 
+function determineExcellence() {
+    const rows = studentTable.rows;
+
+    for (let i = 0; i < rows.length; i++) {
+        const average = parseFloat(rows[i].cells[5].innerHTML);
+        if (!isNaN(average) && average >= 8.0) {
+            rows[i].cells[6].innerHTML = 'Giỏi';
+            rows[i].classList.add('excellent');
+        } else {
+            rows[i].cells[6].innerHTML = '';
+            rows[i].classList.remove('excellent');
+        }
+    }
+}
+
 function displayTable(isAverage, isRank) {
     studentTable.innerHTML = "";
-
+    
     for (let i = 0; i < studenList.length; i++) {
         const student = studenList[i];
         console.log(student);
