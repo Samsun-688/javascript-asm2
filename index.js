@@ -32,7 +32,7 @@ function calculateAverage() {
         console.log(student);
 
         let avg = (student.math + student.physics + student.chemistry) / 3;
-        student.avg = avg;
+        student.avg =  avg.toFixed(2);
 
     }
 
@@ -72,12 +72,8 @@ function determineExcellence() {
     for (let i = 0; i < rows.length; i++) {
         const average = parseFloat(rows[i].cells[5].innerHTML);
         if (!isNaN(average) && average >= 8.0) {
-            rows[i].cells[6].innerHTML = 'Giỏi';
             rows[i].classList.add('excellent');
-        } else {
-            rows[i].cells[6].innerHTML = '';
-            rows[i].classList.remove('excellent');
-        }
+        } 
     }
 }
 
